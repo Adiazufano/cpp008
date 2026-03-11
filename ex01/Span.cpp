@@ -6,7 +6,7 @@
 /*   By: aldiaz-u <aldiaz-u@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:33:19 by aldiaz-u          #+#    #+#             */
-/*   Updated: 2026/02/17 17:31:36 by aldiaz-u         ###   ########.fr       */
+/*   Updated: 2026/03/11 12:43:31 by aldiaz-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	Span::addNumber(int N)
 	storage.push_back(N);
 }
 
+/*para la menor distancia se ordena de menor a mayor y se calcula la diferencia primero con los 2 primeros y
+despues recorremos todo el contendor si se encuentra una menor se cambia el valor de min_diff*/
 int	Span::shortestSpan()
 {
 	if (storage.size() < 2)
@@ -69,6 +71,7 @@ int	Span::shortestSpan()
 	return(min_diff);
 }
 
+/*para la mayor distacia se busca el minimo valor y el maximo se calcula la diferncia y se devuelve*/
 int	Span::longestSpan()
 {
 	if (storage.size() < 2)

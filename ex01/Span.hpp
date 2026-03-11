@@ -19,7 +19,7 @@ class Span
 {
 	private:
 		unsigned int N;
-		vector<int> storage;
+		vector<int> storage;//se usa vector ya que se pueden añadir y elimnar elementos de forma dinamica
 	public:
 		Span();
 		Span(unsigned int N);
@@ -31,6 +31,7 @@ class Span
 		void	addNumbers(Iterator begin, Iterator end)
 		{
 			unsigned int dist = distance(begin, end);
+			//se mira el tamaño del contenedor y se le suma la distanci antre el principio y el final si da mayor de N el span esta lleno
 			if (this -> storage.size() + dist > N)
 				throw std::out_of_range("span is full");
 			this -> storage.insert(this -> storage.end(), begin, end);
